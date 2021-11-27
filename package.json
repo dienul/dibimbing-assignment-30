@@ -1,0 +1,22 @@
+{
+  "name": "dibimbing-assignment-30",
+  "version": "1.0.0",
+  "description": "assignment 30",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dienul/dibimbing-assignment-30.git"
+  },
+  "author": "Dienul Haq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dienul/dibimbing-assignment-30/issues"
+  },
+  "homepage": "https://github.com/dienul/dibimbing-assignment-30#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
