@@ -19,11 +19,39 @@ function createTodo(req, res) {
 }
 
 function updateTodo(req, res) {
-  res.send("Masuk Halaman updateTodo");
+  const { id } = req.params;
+  const { text, done } = req.body;
+  const validText = "text" in req.body;
+  const validDone = "done" in req.body;
+  const index = modelTodo.rows.findIndex((x) => x.id === parseInt(id));
+  if (!validText && !validDone) {
+    res.send("Update harus mengisi Text atau Done");
+  }
+
+  if (validText) {
+    modelTodo.rows[index].text = text;
+  }
+
+  if (validDone) {
+    modelTodo.rows[index].done = done;
+  }
+
+  res.send({
+    id: id,
+    status: "updated",
+    data: modelTodo.rows[index],
+  });
 }
 
 function deleteTodo(req, res) {
-  res.send("Masuk Halaman deleteTodo");
+  const { id } = req.params;
+  const index = modelTodo.rows.findIndex((x) => x.id === parseInt(id));
+  modelTodo.rows.splice(index, 1);
+
+  res.send({
+    id: id,
+    status : "deleted",
+  });
 }
 
 module.exports = {
