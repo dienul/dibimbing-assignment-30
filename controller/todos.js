@@ -1,5 +1,10 @@
 const express = require('express')
-const routes = express.Router()
+const router = express.Router()
+
+router.get('/', (req,res) => {
+    res.send('Masuk halaman todos')
+})
 
 
-module.exports = routes
+
+module.exports = router
